@@ -19,8 +19,6 @@ export const createProduct = async (reqData) => {
         });
         await topLevel.save();
     }
-
-    // Create and save the product with the correct category
     const product = new Product({
         title: reqData.title,
         color: reqData.color,
@@ -41,7 +39,7 @@ export const createProduct = async (reqData) => {
 
 export const deleteProduct = async(productId)=>{
     const product = await findProductById(productId)
-    await Product.findByIdAndDelete(productId)
+    await product.findByIdAndDelete(productId)
     return "product deleted successfully"
 }
 

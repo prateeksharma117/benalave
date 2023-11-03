@@ -1,7 +1,7 @@
 import { cancelOrder, confirmedOrder, deleteOrder, deliverOrder, getAllOrder, shipOrder } from "../services/OrderService.js"
 
 
-export const getAllOrders =async (req, res) =>{
+export const getAllOrders =async (res,req) =>{
     try {
         const orders=await getAllOrder()
         return res.status(200).send(orders)

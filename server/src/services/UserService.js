@@ -1,6 +1,6 @@
 import { getUserIdFromToken } from "../config/jwtProvider.js";
 import User from "../models/UserModel.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 export const createUser = async (userData) => {
     try {

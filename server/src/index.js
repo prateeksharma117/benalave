@@ -39,3 +39,5 @@ app.listen(PORT,async()=>{
     await connectDb()
     console.log(`server started at ${PORT}`);
 })
+
+export default app

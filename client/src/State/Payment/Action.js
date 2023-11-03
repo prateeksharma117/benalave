@@ -1,4 +1,4 @@
-import { api } from "../../config/APiConfig"
+import { api } from "../../config/ApiConfig.js";
 import { UPDATE_CART_ITEM_FAILURE } from "../Cart/ActionType"
 import { CREATE_PAYMENT_FAILURE, CREATE_PAYMENT_REQUEST, CREATE_PAYMENT_SUCCESS, UPDATE_PAYMENT_REQUEST, UPDATE_PAYMENT_SUCCESS } from "./ActionType"
 

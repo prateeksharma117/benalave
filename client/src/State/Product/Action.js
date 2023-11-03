@@ -1,4 +1,4 @@
-import { API_BASE_URL, api } from "../../config/APiConfig.js";
+import { api } from "../../config/ApiConfig.js";
 import {
     CREATE_PRODUCTS_FAILURE,
     CREATE_PRODUCTS_REQUEST,

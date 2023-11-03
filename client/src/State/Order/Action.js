@@ -1,4 +1,4 @@
-import { api } from "../../config/APiConfig.js"
+import { api } from "../../config/ApiConfig.js";
 import { CREATE_ORDER_FAILURE, CREATE_ORDER_REQUEST, CREATE_ORDER_SUCCESS , GET_ORDER_BY_ID_FAILURE, GET_ORDER_BY_ID_REQUEST, GET_ORDER_BY_ID_SUCCESS, GET_USER_ORDER_HISTORY_FAILURE, GET_USER_ORDER_HISTORY_REQUEST, GET_USER_ORDER_HISTORY_SUCCESS } from "./ActionType.js"
 import {toast} from "react-toastify"
 

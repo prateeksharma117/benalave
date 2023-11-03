@@ -12,7 +12,7 @@ import reviewRouter from './routes/reviewRoutes.js';
 import ratingRouter from './routes/ratingRoutes.js';
 import adminOrderRouter from './routes/adminOrderRoutes.js';
 import razorpayRouter from './routes/razorpayRoutes.js';
-const PORT=5454
+const PORT=process.env.PORT||5454
 
 
 const app=express()

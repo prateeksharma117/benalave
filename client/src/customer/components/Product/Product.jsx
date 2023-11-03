@@ -10,7 +10,6 @@ import { CiFilter } from "react-icons/ci";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from '@mui/material/Pagination';
-import Skeleton from 'react-loading-skeleton';
 
 import {
   ChevronDownIcon,
@@ -21,7 +20,6 @@ import {
 } from "@heroicons/react/20/solid";
 import ProductCard from "./ProductCard";
 import { findProducts } from "../../../State/Product/Action";
-import Loader from "../Loader/Loader";
 
 const sortOptions = [
   { name: "Price: Low to High", label: "price_low_to_high", current: false },

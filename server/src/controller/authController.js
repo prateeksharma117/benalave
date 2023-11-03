@@ -1,7 +1,7 @@
 import { generateToken } from "../config/jwtProvider.js"
 import { createCart } from "../services/CartService.js"
 import { createUser, getUserByEmail } from "../services/UserService.js"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 export const register=async(req,res)=>{
     try {

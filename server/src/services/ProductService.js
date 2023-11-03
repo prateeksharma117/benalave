@@ -38,8 +38,7 @@ export const createProduct = async (reqData) => {
 }
 
 export const deleteProduct = async(productId)=>{
-    const product = await findProductById(productId)
-    await product.findByIdAndDelete(productId)
+    await Product.findByIdAndDelete(productId)
     return "product deleted successfully"
 }
 

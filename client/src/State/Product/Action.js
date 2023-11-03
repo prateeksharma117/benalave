@@ -53,7 +53,6 @@ export const findProductsById = (productId) => async (dispatch) => {
 
 export const createProduct = (product) => async (dispatch) => {
     dispatch({ type: CREATE_PRODUCTS_REQUEST });
-    console.log(product);
     try {
         const { data } = await api.post(`/api/admin/products`,product.data);
         dispatch({ type: CREATE_PRODUCTS_SUCCESS, payload: data });
@@ -68,6 +67,7 @@ export const deleteProduct = (productId) => async (dispatch) => {
     try {
         const { data } = await api.delete(`/api/admin/products/delete/${productId}`);
         dispatch({ type: DELETE_PRODUCTS_SUCCESS, payload: productId});
+        toast.success("Product deleted successfully");
     } catch (e) {
         dispatch({ type: DELETE_PRODUCTS_FAILURE, payload: e.message });
         toast.error("Failed to get products by id");

@@ -23,14 +23,9 @@ import {
   TableRow,
   Button,
 } from "@mui/material";
-import Lottie from "react-lottie";
 import deleteImage from "../../assets/deleteImage.json";
-const animationOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: deleteImage,
-};
 import { MantineProvider, Menu } from '@mantine/core';
+import {MdDelete} from "react-icons/md"
 
 const OrdersTable = () => {
   const dispatch = useDispatch();
@@ -209,11 +204,7 @@ const OrdersTable = () => {
                             className=" hover:scale-75 duration-300"
                             onClick={() => handleProductDelete(item?._id)}
                           >
-                            <Lottie
-                              options={animationOptions}
-                              height={50}
-                              width={50}
-                            />
+                            <MdDelete size={30} color='#e34d4d'/>
                           </div>
                         </TableCell>
                       </TableRow>

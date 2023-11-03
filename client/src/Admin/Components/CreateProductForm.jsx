@@ -1,26 +1,11 @@
 import { Button, Card, CardHeader } from '@mui/material'
-import React, { useState } from 'react'
+import {useState } from 'react'
 import { useDispatch } from "react-redux"
-import { MantineProvider, Grid, Container, TextInput, Tooltip, GridCol, Textarea } from '@mantine/core';
-import { AiFillDelete } from "react-icons/ai"
-import deleteImage from "../../assets/deleteImage.json"
-import Lottie from 'react-lottie';
+import { MantineProvider, Grid, Container, TextInput, Tooltip, Textarea } from '@mantine/core';
 import { createProduct } from '../../State/Product/Action';
-import upload from '../../assets/upload.json';
+import {MdDelete} from "react-icons/md"
+import {AiOutlineCloudUpload} from "react-icons/ai"
 
-
-
-const animationOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: deleteImage,
-};
-
-const uploadOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: upload,
-};
 
 
 
@@ -209,7 +194,7 @@ const CreateProductForm = () => {
                             )}
                             rightSection={
                               <Button onClick={() => handleRemoveImage(index)} variant="link">
-                                <Lottie options={animationOptions} height={50} width={50} />
+                                <MdDelete size={30} color='#e34d4d'/>
                               </Button>
                             }
                           />
@@ -359,7 +344,7 @@ const CreateProductForm = () => {
                             )}
                             rightSection={
                               <Button onClick={() => removeHighlight(index)} variant="link">
-                                <Lottie options={animationOptions} height={50} width={50} />
+                                <MdDelete size={30} color='#e34d4d'/>
                               </Button>
                             }
                           />
@@ -401,7 +386,7 @@ const CreateProductForm = () => {
                       onChange={(event) => handleSizeChange(index, "quantity", event.target.value)}
                       rightSection={
                         <Button onClick={() => removeSize(index)} variant="link">
-                          <Lottie options={animationOptions} height={50} width={50} />
+                          <MdDelete size={30} color='#e34d4d'/>
                         </Button>
                       }
                     />
@@ -414,7 +399,7 @@ const CreateProductForm = () => {
 
             <div className='pt-10 pb-2'>
               {isSubmitting && !Object.keys(errors).length > 0 ?
-                <Lottie options={uploadOptions} height={80} width={80} />
+                <Button sx={{ width: "100%" }} variant='contained'>Uploading... <AiOutlineCloudUpload color='white' size={25} style={{marginLeft:"10px"}}/></Button>
                 :
                 <Button type='submit' sx={{ width: "100%" }} variant='contained'>ADD Product</Button>
               }

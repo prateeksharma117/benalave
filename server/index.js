@@ -1,17 +1,17 @@
 import express from 'express';
 import cors from 'cors';
-import connectDb from "./config/db.js"
-import authRouter from './routes/authRoutes.js';
-import userRouter from './routes/userRouters.js';
-import productRouter from './routes/productRoutes.js';
-import adminProductRouter from './routes/adminProductRoutes.js';
-import cartRouter from './routes/cartRoutes.js';
-import cartItemRouter from './routes/cartItemRoutes.js';
-import orderRouter from './routes/orderRoutes.js';
-import reviewRouter from './routes/reviewRoutes.js';
-import ratingRouter from './routes/ratingRoutes.js';
-import adminOrderRouter from './routes/adminOrderRoutes.js';
-import razorpayRouter from './routes/razorpayRoutes.js';
+import connectDb from "./src/config/db.js"
+import authRouter from './src/routes/authRoutes.js';
+import userRouter from './src/routes/userRouters.js';
+import productRouter from './src/routes/productRoutes.js';
+import adminProductRouter from './src/routes/adminProductRoutes.js';
+import cartRouter from './src/routes/cartRoutes.js';
+import cartItemRouter from './src/routes/cartItemRoutes.js';
+import orderRouter from './src/routes/orderRoutes.js';
+import reviewRouter from './src/routes/reviewRoutes.js';
+import ratingRouter from './src/routes/ratingRoutes.js';
+import adminOrderRouter from './src/routes/adminOrderRoutes.js';
+import razorpayRouter from './src/routes/razorpayRoutes.js';
 const PORT=process.env.PORT||5454
 
 

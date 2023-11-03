@@ -9,7 +9,6 @@ import {
   findProductsById,
 } from "../../../State/Product/Action.js";
 import { addItemToCart } from "../../../State/Cart/Action";
-import ReactImageMagnify from 'react-image-magnify';
 import { toast } from "react-toastify";
 import ProductCard from "../Product/ProductCard";
 import numeral from "numeral";

@@ -1,4 +1,4 @@
-import { updatePaymentInformation } from "../services/razorpayService.js"
+import { updatePaymentInformation } from "../services/RazorpayService.js"
 import razorpay from "../config/razorpayClient.js"
 
 

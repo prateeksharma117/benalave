@@ -553,11 +553,13 @@ const Navbar = () => {
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   {auth.jwt?.firstName ? (
-                    <Profile
-                      userInitials={auth.jwt?.firstName[0].toUpperCase()}
-                      close={handleMenuClose}
-                      fullName={auth.jwt?.firstName}
-                    />
+                    <div className=" cursor-pointer">
+                      <Profile
+                        userInitials={auth.jwt?.firstName[0].toUpperCase()}
+                        close={handleMenuClose}
+                        fullName={auth.jwt?.firstName}
+                      />
+                    </div>
                   ) : (
                     <div className=" text-white hover:text-[#2b65b6] cursor-pointer">
                       <p onClick={handleOpen}>Login</p>

@@ -9,7 +9,7 @@ import {
   findProductsById,
 } from "../../../State/Product/Action.js";
 import { addItemToCart } from "../../../State/Cart/Action";
-import Magnifier from "react-magnifier";
+import ReactImageMagnify from 'react-image-magnify';
 import { toast } from "react-toastify";
 import ProductCard from "../Product/ProductCard";
 import numeral from "numeral";
@@ -104,15 +104,7 @@ const ProductDetails = () => {
           {/* Image gallery */}
           <div className=" space-y-3 flex flex-col items-center">
             <div className="overflow-hidden max-w-[40rem]">
-              <Magnifier
-              className=" object-cover object-bottom"
-                src={product?.product?.imageUrl[selectedImageIndex]?.image}
-                zoomFactor={1}
-                mgHeight={200}
-                mgWidth={200}
-                width="100%"
-                height="100%"
-              />
+            <img className=" object-cover object-top" src={product?.product?.imageUrl[selectedImageIndex]?.image} alt="" />
             </div>
             <div className="flex flex-wrap space-x-4  justify-center">
               {product?.product?.imageUrl.map((image, i) => (

@@ -1,0 +1,604 @@
+{
+    "products": [
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/v/y/t/m-st-1333-smartees-original-imagsksftfjvyegx.jpeg?q=70",
+            "brand": "Stanley Stella",
+            "category": "T-shirts",
+            "title": "Men's Premium Organic T-shirt",
+            "description": "100% Organic ring-spun Combed Cotton",
+            "price": 433,
+            "discountedPrice": 599,
+            "discountedPercent": 70 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/shopsy-shirt/x/7/h/l-printed-shirt-for-men-and-boys-qshopq-original-imagzhy3pnbmjy3q.jpeg?q=70",
+            "brand": "Bella & Canvas",
+            "category": "T-shirts",
+            "title": "Unisex Premium Jersey T-shirt",
+            "description": "100% Combed and ringspun cotton. 30 single. Athletic Heather: 90% Combed and ringspun cotton, 10% Polyester. Dark Heather Grey: 52% Combed and ringspun cotton, 48% Polyester",
+            "price": 268,
+            "discountedPrice": 209,
+            "discountedPercent": 30 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/t-shirt/c/d/l/s-vibes0071a-aeronation-original-imagqukjztqzerep.jpeg?q=70",
+            "brand": "American Apparel",
+            "category": "T-shirts",
+            "title": "Unisex Premium Fine Jersey T-shirt",
+            "description": "100% Cotton",
+            "price": 700,
+            "discountedPrice": 409,
+            "discountedPercent": 34 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/t-shirt/k/x/o/xxl-oversizetsrt-102-kajaru-original-imagrrsnf6ngd5x5.jpeg?q=70",
+            "brand": "Continental Clothing",
+            "category": "T-shirts",
+            "title": "Unisex Premium Scoop Neck Tee",
+            "description": "100% Combed Cotton, ( Melange Grey : 85% Cotton 15% Viscose ) Jersey 3oz \/ 115g",
+            "price": 413,
+            "discountedPrice": 109,
+            "discountedPercent": 10 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://images.meesho.com/images/products/19885205/zs1ca_512.webp",
+            "brand": "Gildan",
+            "category": "T-shirts",
+            "title": "Unisex Standard Softstyle T-Shirt",
+            "description": "100% Cotton. Sport Grey: 90% Cotton, 10% Polyester. All heathers: 65% Polyester, 35% Cotton",
+            "price": 212,
+            "discountedPrice": 192,
+            "discountedPercent": 20 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl":"https://images.meesho.com/images/products/211252348/jrafo_512.webp",
+            "brand": "Gildan",
+            "category": "T-shirts",
+            "title": "Men's Ultra Cotton Long Sleeve T",
+            "description": "100% Cotton. Ash: 99% Cotton, 1% Polyester. Dark Heather, Safety Green and Safety Orange: 50% Cotton, 50% Polyester. Sports Grey: 90% Cotton, 10% Polyester",
+            "price": 447,
+            "discountedPrice": 549,
+            "discountedPercent": 60 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/d/o/x/l-oversizetsrt-101-kajaru-original-imagrk3sgtf57dpq.jpeg?q=70",
+            "brand": "Gildan",
+            "category": "T-shirts",
+            "title": "Unisex Standard Heavy Cotton T-Shirt",
+            "description": "100% Ringspun cotton pre-shrunk jersey knit. Sports Grey: 90% Ringspun cotton, 10% Polyester",
+            "price": 212,
+            "discountedPrice": 30,
+            "discountedPercent": 40 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/b/s/2/xxl-hm-1089black-helmont-original-imagtnuzzd7uhhzd.jpeg?q=70",
+            "brand": "Continental Clothing",
+            "category": "T-shirts",
+            "title": "Unisex Premium T-shirt",
+            "description": "100% Combed Cotton, ( Melange Grey : 85% Cotton 15% Viscose ) Jersey 4oz \/ 165g",
+            "price": 368,
+            "discountedPrice": 109,
+            "discountedPercent": 70 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/k5y7tzk0/shirt/g/n/8/s-t-1160-lawful-casual-original-imafnyuy9gsvzxst.jpeg?q=70",
+            "brand": "Continental Clothing",
+            "category": "T-shirts",
+            "title": "Men's Premium Fine Jersey Vest",
+            "description": "100% Combed Cotton, Jersey 3oz \/ 115g",
+            "price": 382,
+            "discountedPrice": 129,
+            "discountedPercent": 40 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/h/j/r/xxl-wings-jolster-original-imagrayygj5crggf.jpeg?q=70",
+            "brand": "American Apparel",
+            "category": "T-shirts",
+            "title": "American Apparel Fine Jersey Tank",
+            "description": "100% Cotton",
+            "price": 767,
+            "discountedPrice": 309,
+            "discountedPercent": 60 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/m/h/7/xxl-fcuk-of-jolster-original-imagr2zw6cdyfgr9.jpeg?q=70",
+            "brand": "Fruit of the Loom",
+            "category": "T-shirts",
+            "title": "Unisex Premium T-shirt",
+            "description": "100% Ringspun cotton pre-shrunk jersey knit. Sports Grey: 90% Ringspun cotton, 10% Polyester",
+            "price": 473,
+            "discountedPrice": 209,
+            "discountedPercent": 30 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/shopsy-t-shirt/t/x/d/l-lk-211-jolster-original-imagr98yqf6nkkyh.jpeg?q=70",
+            "brand": "Continental Clothing",
+            "category": "T-shirt",
+            "title": "Unisex Premium Sweatshirt",
+            "description": "80% Combed Cotton 20% Polyester Brushed 3-ply 9oz \/ 320g",
+            "price": 1118,
+            "discountedPrice": 689,
+            "discountedPercent": 68,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/c/v/m/xl-swg-mt-047-swaggerjns-original-imagqh7tsmherfrq.jpeg?q=70",
+            "brand": "Stanley Stella",
+            "category": "T-shirt",
+            "title": "Unisex Super-Premium Sweatshirt",
+            "description": "Terry - unbrushed fleece - soft touch, 85% Organic ring-spun Combed Cotton, 15% Polyester",
+            "price": 1575,
+            "discountedPrice": 700,
+            "discountedPercent": 70 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/8/m/o/l-st-1143-smartees-original-imagq8v6gxg2rvtq.jpeg?q=70",
+            "brand": "Fruit of the Loom",
+            "category": "T-shirt",
+            "title": "Unisex Standard Sweatshirt",
+            "description": "80% Cotton, Belcoro\u00ae yarn, 20% Polyester",
+            "price": 760,
+            "discountedPrice": 450,
+            "discountedPercent": 89 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/t-shirt/7/j/n/m-st-backprint-jokerpanda-smartees-original-imagkdzzhkrhfdhn.jpeg?q=70",
+            "brand": "Stanley Stella",
+            "category": "T-shirt",
+            "title": "Unisex Premium Hoodie",
+            "description": "Brushed fleece - soft touch, 85% Organic ring-spun Combed Cotton 15% Polyester",
+            "price": 1942,
+            "discountedPrice": 1023,
+            "discountedPercent": 83 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/t-shirt/8/z/4/m-bm1-stylogue-original-imagh573eqs8e8gv.jpeg?q=70",
+            "brand": "Awdis",
+            "category": "T-shirt",
+            "title": "Unisex Standard College Hoodie",
+            "description": "80% Cotton, 20% Polyester",
+            "price": 898,
+            "discountedPrice": 458,
+            "discountedPercent": 65 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/m/l/l/l-sob1-stylogue-original-imaggqe6zztkrzux.jpeg?q=70",
+            "brand": "Continental Clothing",
+            "category": "T-shirt",
+            "title": "Men's Lightweight Zip Hoodie",
+            "description": "80% Combed Cotton 20% Polyester Brushed 3-ply 9oz \/ 320g",
+            "price": 1643,
+            "discountedPrice": 345,
+            "discountedPercent": 39 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/416/416/l5h2xe80/t-shirt/4/0/g/s-gshstsht2956mgrn-gritstones-original-imagg582gbxhh79k.jpeg?q=70",
+            "brand": "Stanley Stella",
+            "category": "T-shirt",
+            "title": "Premium Scoop Neck T-shirt",
+            "description": "100% Organic ring-spun Combed Cotton",
+            "price": 417,
+            "discountedPrice": 234,
+            "discountedPercent": 78 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/t-shirt/8/u/4/s-purple-essential-kshs-original-imagqtw8tyfpfvhy.jpeg?q=70",
+            "brand": "Bella & Canvas",
+            "category": "T-shirt",
+            "title": "Ladies Premium Favorite T-shirt",
+            "description": "100% Combed and ring spun cotton",
+            "price": 328,
+            "discountedPrice": 67,
+            "discountedPercent": 17 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/h/y/x/xxl-stay-wild-oversized-the-modern-soul-original-imagnbtnfhe8ghba.jpeg?q=70",
+            "brand": "Stanley Stella",
+            "category": "T-shirt",
+            "title": "Women's Premium T-shirt",
+            "description": "100% Organic ring-spun Combed Cotton",
+            "price": 433,
+            "discountedPrice": 145,
+            "discountedPercent": 47 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/t/d/3/xl-flos001-flyind-vogue-outfit-original-imagnw5fz7h47web.jpeg?q=70",
+            "brand": "Gildan",
+            "category": "T-shirt",
+            "title": "Ladies Standard Softstyle T-shirt",
+            "description": "100% Cotton. Sport Grey: 90% Cotton, 10% Polyester. All Heathers: 65% Polyester, 35% Cotton",
+            "price": 200,
+            "discountedPrice": 58,
+            "discountedPercent": 30 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/d/g/m/l-02-u-r-fashion-original-imagmqujnjcpatxg.jpeg?q=70",
+            "brand": "Gildan",
+            "category": "T-shirt",
+            "title": "Ladies Standard Long Sleeve T-shirt",
+            "description": "50% Cotton, 50% Polyester fleece",
+            "price": 450,
+            "discountedPrice": 67,
+            "discountedPercent": 5 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/d/4/5/xxl-men-2-ovrsize-028-029-twocraziie-original-imagz9h6e2y8eghu.jpeg?q=70",
+            "brand": "Gildan",
+            "category": "T-shirt",
+            "title": "Ladies Standard Tank Top",
+            "description": "100% Cotton pre-shrunk. Jersey knit. Sport Grey: ringspun 90% Cotton, 10% Polyester",
+            "price": 222,
+            "discountedPrice": 49,
+            "discountedPercent": 11 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/t-shirt/n/r/k/m-dropshoulder-ameys-almuda-original-imagnzgatzm5ghph.jpeg?q=70",
+            "brand": "Continental Clothing",
+            "category": "T-shirt",
+            "title": "Women's Premium Regular Fit T-shirt",
+            "description": "100% Combed Cotton ( Melange Grey : 85% Cotton 15% Viscose ) Jersey 3oz \/ 130g",
+            "price": 315,
+            "discountedPrice": 79,
+            "discountedPercent": 27 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        },
+        {
+            "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/g/5/2/xl-ovrsze-men-365-378-christy-world-original-imagpuw86jhgmp25.jpeg?q=70",
+            "brand": "Continental Clothing",
+            "category": "T-shirt",
+            "title": "Women's Premium Tunic Vest",
+            "description": "100% Combed Cotton ( Melange Grey : 85% Cotton 15% Viscose ) Fine Jersey 3oz \/ 115g",
+            "price": 405,
+            "discountedPrice": 240,
+            "discountedPercent": 54 ,
+            "size": [
+                {
+                  "name": "S",
+                  "quantity": 20
+                },
+                {
+                  "name": "M",
+                  "quantity": 30
+                },
+                {
+                  "name": "L",
+                  "quantity": 50
+                }
+              ]
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    overflow-anchor: none;
+}
+
+.paddings {
+    padding: 1.5rem;
+}
+
+.primaryText {
+    color: #061323;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.secondaryText {
+    color: #807f7f;
+    font-size: 0.8rem;
+}
+
+.button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.ellipse{
+    line-clamp: 3;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

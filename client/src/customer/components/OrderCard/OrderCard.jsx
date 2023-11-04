@@ -9,8 +9,7 @@ import dayjs from "dayjs";
 const OrderCard = ({ item }) => {
     const navigate = useNavigate()
     const openOrderDetailsInNewTab = (order) => {
-        const url = `/account/order/${order?._id}`;
-        window.open(url, '_blank');
+        navigate(`/account/order/${order?._id}`)
     };
 
     return (

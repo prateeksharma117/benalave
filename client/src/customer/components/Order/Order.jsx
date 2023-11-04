@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { BiFilterAlt } from "react-icons/bi";
-import {FilterOrderCard, OrderCard} from "../../components";
+import { FilterOrderCard, OrderCard } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, login } from "../../../State/Auth/Action";
 import { userOrderHistory } from "../../../State/Order/Action";
@@ -37,9 +37,12 @@ const Order = () => {
     }
   };
 
-  const filteredOrders = order?.order?.filter((order) =>
-    selectedStatus.length === 0 || selectedStatus.includes(order.orderStatus)
-  );
+  const orderData = order?.order; // Store the order data in a variable
+  const filteredOrders = Array.isArray(orderData)
+    ? orderData.filter((order) =>
+      selectedStatus.length === 0 || selectedStatus.includes(order.orderStatus)
+    )
+    : [];
 
 
   return (
@@ -53,8 +56,8 @@ const Order = () => {
             order?.order?.length < 1 ?
               (
                 <div className="flex flex-col px-5 items-center justify-center h-screen">
-                    <h2 className="text-2xl font-semibold mb-4">No Orders Found</h2>
-                    <p className="text-gray-600 text-center">Sorry, we couldn&apos;t find any orders for you at the moment. Please check back later or place a new order.</p>
+                  <h2 className="text-2xl font-semibold mb-4">No Orders Found</h2>
+                  <p className="text-gray-600 text-center">Sorry, we couldn&apos;t find any orders for you at the moment. Please check back later or place a new order.</p>
                 </div>
               ) :
               (
@@ -93,7 +96,7 @@ const Order = () => {
 
                     <Grid item sm={8} lg={9} xs={12}>
                       <div className=" space-y-5">
-                        {filteredOrders===null?<OrderCard item={order} />:<FilterOrderCard item={filteredOrders}/>}
+                        {filteredOrders === null ? <OrderCard item={order} /> : <FilterOrderCard item={filteredOrders} />}
                       </div>
                     </Grid>
                   </Grid>

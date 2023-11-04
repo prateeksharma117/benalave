@@ -58,7 +58,7 @@ const navigation = {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Shoes", label: "womenShoes" },
+            { name: "Shoes", label: "shoes" },
             { name: "Scarves", label: "scarves" },
             { name: "Hats", label: "hat" },
             { name: "Belts", label: "womenBelts" },
@@ -125,7 +125,7 @@ const navigation = {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Shoes", label: "manShoes" },
+            { name: "Shoes", label: "shoes" },
             { name: "Scarves", label: "scarves" },
             { name: "Hats", label: "hat" },
             { name: "Belts", label: "manBelts" },

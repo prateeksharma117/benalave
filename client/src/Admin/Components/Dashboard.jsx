@@ -17,8 +17,10 @@ const Dashboard = () => {
   return (
     <>
       {
-
-            <div className=''>
+        adminOrder?.orders?.length<1? (
+          <Loader />
+        ) : (
+          <div className=''>
               <Grid container spacing={2}>
                 <Grid item xs={12} md={4}>
                   <Achievements />
@@ -40,6 +42,7 @@ const Dashboard = () => {
                 </Grid>
               </Grid>
             </div>
+        )
       }
     </>
   )

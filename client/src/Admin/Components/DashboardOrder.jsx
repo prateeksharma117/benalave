@@ -38,7 +38,7 @@ const DashboardOrder = () => {
                     ) : (
                         <Card className="mt-2" sx={{ bgcolor: "#0c0c20", color: "#fff" }}>
                             <div className="flex justify-between">
-                                <CardHeader title="All Products" />
+                                <CardHeader title="Orders" />
                                 <CardHeader title={"Total " + adminOrder?.orders?.length} />
                             </div>
 
@@ -57,6 +57,9 @@ const DashboardOrder = () => {
                                             </TableCell>
                                             <TableCell sx={{ color: "#fff" }} align="left">
                                                 Title
+                                            </TableCell>
+                                            <TableCell sx={{ color: "#fff" }} align="left">
+                                                Status
                                             </TableCell>
                                             <TableCell sx={{ color: "#fff" }} align="left">
                                                 Price
@@ -93,11 +96,27 @@ const DashboardOrder = () => {
                                                     scope="row"
                                                 >
                                                     {item.orderItems.slice(0, 1).map((orderItem, i) => (
-                                                        <div key={i} className="flex flex-row">
-                                                            <p>{orderItem?.product?.title}</p>
-                                                        </div>
+                                                            <p key={i} className=" line-clamp-2">{orderItem?.product?.title}</p>
                                                     ))}
-                                                    
+
+                                                </TableCell>
+                                                <TableCell sx={{ color: "#fff" }} align="left">
+                                                    <span
+                                                        className={` text-white px-5 py-2 rounded-full ${item.orderStatus === "PLACED"
+                                                            ? "bg-[#57297c]"
+                                                            : item.orderStatus === "PENDING"
+                                                                ? "bg-[#f3a638]"
+                                                                : item.orderStatus === "CONFIRMED"
+                                                                    ? "bg-[#54b7d3]"
+                                                                    : item.orderStatus === "SHIPPED"
+                                                                        ? "bg-[#1e91cf]"
+                                                                        : item.orderStatus === "DELIVERED"
+                                                                            ? "bg-[#4cb64c]"
+                                                                            : "bg-[#e3503e]"
+                                                            }`}
+                                                    >
+                                                        {item?.orderStatus}
+                                                    </span>
                                                 </TableCell>
                                                 <TableCell sx={{ color: "#fff" }} align="left">
                                                     {item?.totalPrice}

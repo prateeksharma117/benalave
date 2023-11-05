@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Button,
   Card,
   CardHeader,
   Pagination,
@@ -14,10 +15,11 @@ import {
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct, findProducts } from "../../State/Product/Action";
-import { Select, MantineProvider, Grid } from "@mantine/core";
+import { Select, MantineProvider, Grid, Menu } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { Loader } from "../../Admin";
 import { MdDelete } from "react-icons/md";
+import { useDisclosure } from "@mantine/hooks";
 
 const sortOptions = [
   { name: "Price: Low to High", label: "price_low_to_high" },
@@ -181,18 +183,18 @@ const ProductsTable = () => {
   return (
     <>
       {
-        <div className="md:p-5 space-y-5 overflow-x-auto">
-          <Card className="mt-2" sx={{ bgcolor: "#0c0c20", color: "#fff" }}>
-            <div className="flex justify-between items-center">
-              <CardHeader title="Filters" />
-              <p
-                onClick={clearFilter}
-                className=" cursor-pointer mr-5 text-red-500 hover:scale-90 duration-300"
-              >
-                Clear Filter
-              </p>
-            </div>
-            <MantineProvider>
+        <MantineProvider>
+          <div className="md:p-5 space-y-5 overflow-x-auto">
+            <Card className="mt-2" sx={{ bgcolor: "#0c0c20", color: "#fff" }}>
+              <div className="flex justify-between items-center">
+                <CardHeader title="Filters" />
+                <p
+                  onClick={clearFilter}
+                  className=" cursor-pointer mr-5 text-red-500 hover:scale-90 duration-300"
+                >
+                  Clear Filter
+                </p>
+              </div>
               <Grid style={{ padding: "1rem" }}>
                 <Grid.Col span={{ base: 6, sm: 3 }}>
                   <Select
@@ -254,128 +256,148 @@ const ProductsTable = () => {
                   />
                 </Grid.Col>
               </Grid>
-            </MantineProvider>
-          </Card>
+            </Card>
 
-          {product.loading === true ? (
-            <Loader />
-          ) : product?.products?.content?.length < 1 ? (
-            <div className=" flex justify-center items-center text-white">
-              Unfortunately, no item was found
-            </div>
-          ) : (
-            <Card className="mt-2" sx={{ bgcolor: "#0c0c20", color: "#fff" }}>
-              <div className="flex justify-between">
-                <CardHeader title="All Products" />
-                <CardHeader
-                  title={"Total " + product?.products?.content?.length}
-                />
+            {product.loading === true ? (
+              <Loader />
+            ) : product?.products?.content?.length < 1 ? (
+              <div className=" flex justify-center items-center text-white">
+                Unfortunately, no item was found
               </div>
-
-              <TableContainer
-                sx={{ bgcolor: "#0c0c20", color: "#fff" }}
-                component={Paper}
-              >
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                  <TableHead>
-                    <TableRow>
-                      <TableCell sx={{ color: "#fff" }} align="left">
-                        S.no
-                      </TableCell>
-                      <TableCell sx={{ color: "#fff" }} align="left">
-                        Image
-                      </TableCell>
-                      <TableCell sx={{ color: "#fff" }} align="left">
-                        Title
-                      </TableCell>
-                      <TableCell sx={{ color: "#fff" }} align="left">
-                        Color
-                      </TableCell>
-                      <TableCell sx={{ color: "#fff" }} align="left">
-                        Size
-                      </TableCell>
-                      <TableCell sx={{ color: "#fff" }} align="left">
-                        Category
-                      </TableCell>
-                      <TableCell sx={{ color: "#fff" }} align="left">
-                        Price
-                      </TableCell>
-                      <TableCell sx={{ color: "#fff" }} align="left">
-                        Quantity
-                      </TableCell>
-                      <TableCell sx={{ color: "#fff" }} align="left">
-                        Delete
-                      </TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {product?.products?.content?.map((item, i) => (
-                      <TableRow
-                        key={i}
-                        sx={{
-                          "&:last-child td, &:last-child th": { border: 0 },
-                        }}
-                      >
-                        <TableCell sx={{ color: "#fff" }} align="left">
-                          {i + 1}
-                        </TableCell>
-                        <TableCell sx={{ color: "#fff" }} align="left">
-                          <Avatar src={item?.imageUrl[0]?.image} />
-                        </TableCell>
-                        <TableCell sx={{ color: "#fff" }} align="left">
-                          {item?.title}
-                        </TableCell>
-                        <TableCell sx={{ color: "#fff" }} align="left">
-                          {item?.color}
-                        </TableCell>
-                        <TableCell sx={{ color: "#fff" }} align="left">
-                          {item?.size?.map((item) => item.name + " ")}
-                        </TableCell>
-                        <TableCell sx={{ color: "#fff" }} align="left">
-                          {item?.category?.name}
-                        </TableCell>
-                        <TableCell sx={{ color: "#fff" }} align="left">
-                          {item?.price}
-                        </TableCell>
-                        <TableCell sx={{ color: "#fff" }} align="left">
-                          {item?.quantity}
-                        </TableCell>
-                        <TableCell sx={{ color: "#fff" }} align="left">
-                          <div
-                            className=" hover:scale-75 duration-300 cursor-pointer"
-                            onClick={() => handleProductDelete(item?._id)}
-                          >
-                            <MdDelete size={30} color="#e34d4d" />
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-
-              <section>
-                <div className="pt-5 flex justify-center items-center">
-                  <Pagination
-                    sx={{
-                      bgcolor: "#fff",
-                      padding: "0.5rem",
-                      width: 1,
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                    color="primary"
-                    variant="outlined"
-                    shape="rounded"
-                    count={product.products?.totalPages}
-                    onChange={handlePaginationChange}
+            ) : (
+              <Card className="mt-2" sx={{ bgcolor: "#0c0c20", color: "#fff" }}>
+                <div className="flex justify-between">
+                  <CardHeader title="All Products" />
+                  <CardHeader
+                    title={"Total " + product?.products?.content?.length}
                   />
                 </div>
-              </section>
-            </Card>
-          )}
-        </div>
+
+                <TableContainer
+                  sx={{ bgcolor: "#0c0c20", color: "#fff" }}
+                  component={Paper}
+                >
+                  <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell sx={{ color: "#fff" }} align="left">
+                          S.no
+                        </TableCell>
+                        <TableCell sx={{ color: "#fff" }} align="left">
+                          Image
+                        </TableCell>
+                        <TableCell sx={{ color: "#fff" }} align="left">
+                          Title
+                        </TableCell>
+                        <TableCell sx={{ color: "#fff" }} align="left">
+                          Color
+                        </TableCell>
+                        <TableCell sx={{ color: "#fff" }} align="left">
+                          Size
+                        </TableCell>
+                        <TableCell sx={{ color: "#fff" }} align="left">
+                          Category
+                        </TableCell>
+                        <TableCell sx={{ color: "#fff" }} align="left">
+                          Price
+                        </TableCell>
+                        <TableCell sx={{ color: "#fff" }} align="left">
+                          Quantity
+                        </TableCell>
+                        <TableCell sx={{ color: "#fff" }} align="left">
+                          Delete
+                        </TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {product?.products?.content?.map((item, i) => (
+                        <TableRow
+                          key={i}
+                          sx={{
+                            "&:last-child td, &:last-child th": { border: 0 },
+                          }}
+                        >
+                          <TableCell sx={{ color: "#fff" }} align="left">
+                            {i + 1}
+                          </TableCell>
+
+                          <TableCell sx={{ color: "#fff" }} align="left">
+                            <Avatar src={item?.imageUrl[0]?.image} />
+                          </TableCell>
+
+                          <TableCell sx={{ color: "#fff" }} align="left">
+                            <p className=" line-clamp-2">{item?.title}</p>
+                          </TableCell>
+
+                          <TableCell sx={{ color: "#fff" }} align="left">
+                            {item?.color}
+                          </TableCell>
+
+                          <TableCell sx={{ color: "#fff" }} align="left">
+                          <Menu shadow="md" width={200}>
+                              <Menu.Target>
+                                <Button>Size</Button>
+                              </Menu.Target>
+                              <Menu.Dropdown>
+                                <Menu.Label>Size</Menu.Label>
+                                {item?.size?.map((item,i) =>(
+                                  <Menu.Item key={i}>
+                                    {item?.name}
+                                </Menu.Item>
+                                ))}
+                              </Menu.Dropdown>
+                            </Menu>
+                          </TableCell>
+
+                          <TableCell sx={{ color: "#fff" }} align="left">
+                            {item?.category?.name}
+                          </TableCell>
+
+                          <TableCell sx={{ color: "#fff" }} align="left">
+                            {item?.price}
+                          </TableCell>
+
+                          <TableCell sx={{ color: "#fff" }} align="left">
+                            {item?.quantity}
+                          </TableCell>
+
+                          <TableCell sx={{ color: "#fff" }} align="left">
+                            <div
+                              className=" hover:scale-75 duration-300 cursor-pointer"
+                              onClick={() => handleProductDelete(item?._id)}
+                            >
+                              <MdDelete size={30} color="#e34d4d" />
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+
+                <section>
+                  <div className="pt-5 flex justify-center items-center">
+                    <Pagination
+                      sx={{
+                        bgcolor: "#fff",
+                        padding: "0.5rem",
+                        width: 1,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                      color="primary"
+                      variant="outlined"
+                      shape="rounded"
+                      count={product.products?.totalPages}
+                      onChange={handlePaginationChange}
+                    />
+                  </div>
+                </section>
+              </Card>
+            )}
+          </div>
+        </MantineProvider>
       }
     </>
   );

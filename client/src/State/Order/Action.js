@@ -21,7 +21,6 @@ export const createOrder=(reqData)=>async(dispatch)=>{
             type:CREATE_ORDER_FAILURE,
             payload:e.message
         })
-        toast.error("Error while creating order")
     }
 } 
 
@@ -39,7 +38,6 @@ export const getOrderById=(orderId)=>async(dispatch)=>{
             type:GET_ORDER_BY_ID_FAILURE,
             payload:e.message
         })
-        toast.error("Error while creating order by id")
     }
 } 
 
@@ -57,6 +55,5 @@ export const userOrderHistory=(userId)=>async(dispatch)=>{
             type:GET_USER_ORDER_HISTORY_FAILURE,
             payload:e.message
         })
-        toast.error("Error while creating order by id")
     }
 } 

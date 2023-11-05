@@ -20,9 +20,8 @@ import {
 
 const initialState = {
     loading: false,
-    orders: [], // Changed 'order' to 'orders' to match the initial state
+    orders: [], 
     error: "",
-    // Initialize other state properties here if needed
 };
 
 export const adminOrderReducer = (state = initialState, action) => {

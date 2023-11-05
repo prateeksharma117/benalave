@@ -23,7 +23,6 @@ export const getCart = () => async (dispatch) => {
         dispatch({ type: GET_CART_SUCCESS, payload: data });
     } catch (e) {
         dispatch({ type: GET_CART_FAILURE, payload: e.message });
-        toast.error("failed to get cart");
     }
 };
 
@@ -35,7 +34,6 @@ export const addItemToCart = (reqData) => async (dispatch) => {
         toast.success("Item added to cart");
     } catch (e) {
         dispatch({ type: ADD_ITEM_TO_CART_FAILURE, payload: e.message });
-        toast.error("Login to add item to cart");
     }
 };
 

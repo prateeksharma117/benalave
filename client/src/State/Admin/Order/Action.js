@@ -10,7 +10,6 @@ export const getOrder = () => async (dispatch) => {
         const { data } = await api.get("/api/admin/orders/")
         dispatch({ type: GET_ORDERS_SUCCESS, payload: data })
     } catch (e) {
-        console.log(e.message);
         dispatch({ type: GET_ORDERS_FAILURE, payload: e.message });
     }
 }
@@ -22,7 +21,6 @@ export const confirmOrder = (orderId) => async (dispatch) => {
         const { data } = await api.put(`/api/admin/orders/${orderId}/confirmed`)
         dispatch({ type: CONFIRMED_ORDER_SUCCESS, payload: data })
     } catch (e) {
-        console.log(e.message);
         dispatch({ type: CONFIRMED_ORDER_FAILURE, payload: e.message });
     }
 }
@@ -34,7 +32,6 @@ export const shippedOrder = (orderId) => async (dispatch) => {
         const { data } = await api.put(`/api/admin/orders/${orderId}/ship`)
         dispatch({ type: SHIP_ORDER_SUCCESS, payload: data })
     } catch (e) {
-        console.log(e.message);
         dispatch({ type: SHIP_ORDER_FAILURE, payload: e.message });
     }
 }
@@ -46,7 +43,6 @@ export const deliveredOrder = (orderId) => async (dispatch) => {
         const { data } = await api.put(`/api/admin/orders/${orderId}/deliver`)
         dispatch({ type: DELIVERED_ORDER_SUCCESS, payload: data })
     } catch (e) {
-        console.log(e.message);
         dispatch({ type: DELIVERED_ORDER_FAILURE, payload: e.message });
     }
 }
@@ -58,7 +54,6 @@ export const cancelOrder = (orderId) => async (dispatch) => {
         const { data } = await api.put(`/api/admin/orders/${orderId}/cancel`)
         dispatch({ type: CANCELED_ORDER_SUCCESS, payload: data })
     } catch (e) {
-        console.log(e.message);
         dispatch({ type: CANCELED_ORDER_FAILURE, payload: e.message });
     }
 }
@@ -70,7 +65,6 @@ export const deleteOrder = (orderId) => async (dispatch) => {
         const { data } = await api.put(`/api/admin/orders/${orderId}/delete`)
         dispatch({ type: DELETE_ORDER_SUCCESS, payload: data })
     } catch (e) {
-        console.log(e.message);
         dispatch({ type: DELETE_ORDER_FAILURE, payload: e.message });
     }
 }

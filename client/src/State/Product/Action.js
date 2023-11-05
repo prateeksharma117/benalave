@@ -39,7 +39,6 @@ export const findProducts = (reqData) => async (dispatch) => {
         dispatch({ type: FIND_PRODUCTS_SUCCESS, payload: data });
     } catch (e) {
         dispatch({ type: FIND_PRODUCTS_FAILURE, payload: e.message });
-        toast.error("Failed to get products");
     }
 };
 
@@ -50,7 +49,6 @@ export const findProductsById = (productId) => async (dispatch) => {
         dispatch({ type: FIND_PRODUCT_BY_ID_SUCCESS, payload: data });
     } catch (e) {
         dispatch({ type: FIND_PRODUCT_BY_ID_FAILURE, payload: e.message });
-        toast.error("Failed to get products by id");
     }
 };
 
@@ -61,7 +59,6 @@ export const createProduct = (product) => async (dispatch) => {
         dispatch({ type: CREATE_PRODUCTS_SUCCESS, payload: data });
     } catch (e) {
         dispatch({ type: CREATE_PRODUCTS_FAILURE, payload: e.message });
-        toast.error("Failed to get products by id");
     }
 };
 
@@ -73,7 +70,6 @@ export const deleteProduct = (productId) => async (dispatch) => {
         toast.success("Product deleted successfully");
     } catch (e) {
         dispatch({ type: DELETE_PRODUCTS_FAILURE, payload: e.message });
-        toast.error("Failed to get products by id");
     }
 };
 

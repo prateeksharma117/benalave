@@ -84,7 +84,7 @@ const OrdersTable = () => {
                 sx={{ bgcolor: "#0c0c20", color: "#fff" }}
                 component={Paper}
               >
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                <Table sx={{ minWidth: 800 }} aria-label="simple table">
                   <TableHead>
                     <TableRow>
                       <TableCell sx={{ color: "#fff" }} align="left">
@@ -137,12 +137,9 @@ const OrdersTable = () => {
                         <TableCell
                           sx={{ color: "#fff" }}
                           align="left"
-                          scope="row"
                         >
                             {item.orderItems.slice(0, 1).map((orderItem, i) => (
-                              <div key={i} className="flex flex-row">
-                                <p>{orderItem?.product?.title}</p>
-                              </div>
+                                <p key={i} className=" line-clamp-2">{orderItem?.product?.title}</p>
                             ))}
 
                         </TableCell>

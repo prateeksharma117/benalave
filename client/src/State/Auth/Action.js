@@ -60,7 +60,7 @@ export const getUser=(jwt)=>async(dispatch)=>{
         const user=response.data
         dispatch(get_user_success(user))
     } catch (e) {
-        dispatch(get_user_failure(toast.error("Failed to get user")))
+        dispatch(get_user_failure())
     }
 } 
 
@@ -78,5 +78,5 @@ export const getAllUser=()=>async(dispatch)=>{
 export const logout=()=>(dispatch)=>{
     dispatch({type: LOGOUT, payload:null})
     localStorage.clear()
-    toast.success("User logged out")
+    toast.success("User logged out") 
 }

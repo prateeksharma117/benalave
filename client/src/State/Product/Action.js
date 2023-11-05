@@ -12,6 +12,9 @@ import {
     FIND_PRODUCT_BY_ID_FAILURE,
     FIND_PRODUCT_BY_ID_REQUEST,
     FIND_PRODUCT_BY_ID_SUCCESS,
+    RECENTLY_VIEWED_FAILURE,
+    RECENTLY_VIEWED_REQUEST,
+    RECENTLY_VIEWED_SUCCESS,
 } from "./ActionType.js";
 import { toast } from "react-toastify";
 
@@ -71,5 +74,15 @@ export const deleteProduct = (productId) => async (dispatch) => {
     } catch (e) {
         dispatch({ type: DELETE_PRODUCTS_FAILURE, payload: e.message });
         toast.error("Failed to get products by id");
+    }
+};
+
+export const recentlyViewed = (reqData) => async (dispatch) => {
+    dispatch({ type: RECENTLY_VIEWED_REQUEST });
+    try {
+        await api.post(`/api/users/recentProduct`,reqData);
+        dispatch({ type: RECENTLY_VIEWED_SUCCESS});
+    } catch (e) {
+        dispatch({ type: RECENTLY_VIEWED_FAILURE, payload: e.message });
     }
 };

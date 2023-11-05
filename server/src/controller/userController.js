@@ -1,4 +1,4 @@
-import { getAllUsers, getUserByEmail, getUserProfileByToken } from "../services/UserService.js";
+import { getAllUsers, getUserByEmail, getUserProfileByToken, recentProducts } from "../services/UserService.js";
 
 
 export const getUserProfile=async(req,res)=>{
@@ -31,6 +31,16 @@ export const getUserWithEmail=async(req,res)=>{
         }
         const user=await getUserByEmail(email)
         return res.status(200).send(user)
+    } catch (e) {
+        return res.status(500).send({error:e.message})
+    }
+}
+
+export const recentProduct=async(req,res)=>{
+    const reqData=req.body
+    try {
+        await recentProducts(reqData)
+        return res.status(200).send("product successfully added in recent product list")
     } catch (e) {
         return res.status(500).send({error:e.message})
     }

@@ -1,24 +1,27 @@
 import { useEffect, useState } from "react";
 import { RadioGroup } from "@headlessui/react";
-import {Button, Rating } from "@mui/material";
+import { Button, Rating } from "@mui/material";
 import { Banners, Loader } from "../../components";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   findProducts,
   findProductsById,
+  recentlyViewed,
 } from "../../../State/Product/Action.js";
 import { addItemToCart } from "../../../State/Cart/Action";
 import { toast } from "react-toastify";
 import ProductCard from "../Product/ProductCard";
 import numeral from "numeral";
+import { getUser } from "../../../State/Auth/Action";
 
 const ProductDetails = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const params = useParams();
   const dispatch = useDispatch();
-  const { product } = useSelector((store) => store);
+  const { product, auth } = useSelector((store) => store);
+  const jwt = localStorage.getItem("jwt");
 
   const decodedQueryString = decodeURIComponent(location.search);
   const searchParams = new URLSearchParams(decodedQueryString);
@@ -65,8 +68,19 @@ const ProductDetails = () => {
       pageSize: 12,
       stock: stock,
     };
+
+    dispatch(getUser(jwt));
     dispatch(findProducts(relatedProductData));
     dispatch(findProductsById(params.productId));
+
+    const recentProductData = {
+      userId: auth?.jwt?._id,
+      productId: params.productId,
+    };
+
+    console.log(recentProductData);
+
+    dispatch(recentlyViewed(recentProductData))
   }, [params.productId]);
 
   return product.loading === true ? (
@@ -103,7 +117,11 @@ const ProductDetails = () => {
           {/* Image gallery */}
           <div className=" space-y-3 flex flex-col items-center">
             <div className="overflow-hidden max-w-[40rem]">
-            <img className=" object-cover object-top" src={product?.product?.imageUrl[selectedImageIndex]?.image} alt="" />
+              <img
+                className=" object-cover object-top"
+                src={product?.product?.imageUrl[selectedImageIndex]?.image}
+                alt=""
+              />
             </div>
             <div className="flex flex-wrap space-x-4  justify-center">
               {product?.product?.imageUrl.map((image, i) => (
@@ -141,7 +159,7 @@ const ProductDetails = () => {
               <div className="flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6">
                 <p className=" font-semibold">Rs. {product?.product?.price}</p>
                 <p className=" line-through text-gray-400">
-                Rs. {product?.product?.discountedPrice}
+                  Rs. {product?.product?.discountedPrice}
                 </p>
                 <p className=" text-green-500">
                   {product?.product?.discountedPercent}% off
@@ -151,17 +169,25 @@ const ProductDetails = () => {
               {/* Reviews */}
               <div className="mt-6">
                 <div className="flex items-center space-x-3">
-                  <Rating name="read-only" value={Math.floor(Math.random() * 6)} readOnly />
-                  <p className=" opacity-50 text-sm">{`Ratings ${numeral(Math.floor(Math.random() * 1000000)).format("(0 a)")}`}</p>
+                  <Rating
+                    name="read-only"
+                    value={Math.floor(Math.random() * 6)}
+                    readOnly
+                  />
+                  <p className=" opacity-50 text-sm">{`Ratings ${numeral(
+                    Math.floor(Math.random() * 1000000)
+                  ).format("(0 a)")}`}</p>
                   <p className=" ml-3 text-sm font-medium text-[#2b65b6] hover:text-[#4691fb]">
-                    {`Reviews ${numeral(Math.floor(Math.random() * 1000000)).format("(0 a)")}`}
+                    {`Reviews ${numeral(
+                      Math.floor(Math.random() * 1000000)
+                    ).format("(0 a)")}`}
                   </p>
                 </div>
               </div>
 
               <div className="mt-6 text-sm">
                 <div className="flex items-center space-x-2">
-                <p>Pay $100 and rest later via</p>
+                  <p>Pay $100 and rest later via</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="50"
@@ -205,13 +231,12 @@ const ProductDetails = () => {
 
               <div className="mt-6 space-y-2">
                 <p className="secondaryText">
-                {`COLOR ---> ${product?.product?.color}`}
+                  {`COLOR ---> ${product?.product?.color}`}
                 </p>
                 <div
-                style={{ backgroundColor: `${product?.product?.color}` }}
+                  style={{ backgroundColor: `${product?.product?.color}` }}
                   className={`w-10 h-10 flex items-center rounded-full drop-shadow-xl border-2 border-gray-300`}
-                >
-                </div>
+                ></div>
               </div>
 
               <form className="mt-10">
@@ -264,7 +289,7 @@ const ProductDetails = () => {
                     onClick={handleAddToCart}
                     variant="outlined"
                     sx={{
-                      width:"100%",
+                      width: "100%",
                       px: "2rem",
                       py: "0.5rem",
                       "&:hover": {
@@ -320,7 +345,30 @@ const ProductDetails = () => {
               </div>
             </div>
           </div>
-        </section>  
+        </section>
+
+        {/* recent viewed product */}
+
+        <section className="py-10 mx-3">
+          <h1 className="primaryText flex text">
+            {auth?.jwt?.recentProduct?.length < 1 ? "" : "RECENTLY VIEWED"}
+          </h1>
+          <div className="flex justify-center flex-wrap space-y-5">
+            {auth?.jwt?.recentProduct?.length < 1 ? (
+              <div>
+              </div>
+            ) : (
+              <div className=" flex flex-wrap">
+                {auth?.jwt?.recentProduct?.filter((item) => item?._id !== product?.product?._id)
+                  .slice(0, 5)
+                  .map((item, i) => (
+                    <ProductCard product={item} key={i} />
+                  ))}
+              </div>
+            )}
+          </div>
+        </section>
+
         {/* semilar product */}
 
         <section className="py-10 mx-3">
@@ -330,7 +378,9 @@ const ProductDetails = () => {
           <div className="flex justify-center flex-wrap space-y-5">
             {product?.products?.content?.length < 2 ? (
               <div className="flex justify-center items-center">
-                <p className=" text-center">There are no similar products available for this product</p>
+                <p className=" text-center">
+                  There are no similar products available for this product
+                </p>
               </div>
             ) : (
               <div className=" flex flex-wrap">

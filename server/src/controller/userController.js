@@ -1,4 +1,4 @@
-import { getAllUsers, getUserByEmail, getUserProfileByToken, recentProducts } from "../services/UserService.js";
+import { getAllUsers, getUserByEmail, getUserProfileByToken, recentProducts ,wishlist} from "../services/UserService.js";
 
 
 export const getUserProfile=async(req,res)=>{
@@ -45,3 +45,13 @@ export const recentProduct=async(req,res)=>{
         return res.status(500).send({error:e.message})
     }
 }
+
+export const wishlists=async(req,res)=>{
+    const reqData=req.body
+    try {
+        const product=await wishlist(reqData)
+        return res.status(201).send({message:"Products Add successfully"})
+    } catch (e) {
+        return res.status(500).send({error: e.message})
+    }
+}  

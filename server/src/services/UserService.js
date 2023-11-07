@@ -25,6 +25,7 @@ export const findUserById = async (userId) => {
         const user = await User.findById(userId)
             .populate("recentProduct")
             .populate("address")
+            .populate("wishlist")
             .exec();
         if (!user) {
             throw new Error("User not found with id");
@@ -86,17 +87,49 @@ export const recentProducts = async (reqData) => {
         const recentProductIndex = user.recentProduct.indexOf(product._id);
 
         if (recentProductIndex === -1) {
-            // If the product is not in the list, add it to the top
+
             user.recentProduct.unshift(product._id);
         } else {
-            // If the product is already in the list, move it to the top
-            user.recentProduct.splice(recentProductIndex, 1); // Remove the product from its current position
-            user.recentProduct.unshift(product._id); // Add it to the top
+
+            user.recentProduct.splice(recentProductIndex, 1);
+            user.recentProduct.unshift(product._id); 
         }
 
         await user.save();
         return { message: "Product added to recently viewed list" };
     } catch (e) {
         throw new Error(e.message);
+    }
+};
+
+export const wishlist = async (reqData) => {
+    try {
+        const { userId, productId } = reqData;
+
+
+        const user = await User.findById(userId);
+        if (!user) {
+            return { message: "User not found" }
+        }
+
+        const product = await Product.findById(productId);
+        if (!product) {
+            return { message: "Product not found" }
+        }
+
+        const isProductInWishlist = user.wishlist.includes(productId);
+
+        if (isProductInWishlist) {
+
+            user.wishlist = user.wishlist.filter((item) => item.toString() !== productId);
+        } else {
+
+            user.wishlist.push(productId);
+        }
+        await user.save();
+
+        return { message: "Wishlist updated successfully" }
+    } catch (e) {
+        return { error: e.message }
     }
 };

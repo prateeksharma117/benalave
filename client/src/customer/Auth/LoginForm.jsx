@@ -3,11 +3,11 @@ import Button from "@mui/material/Button";
 import { useDisclosure } from "@mantine/hooks";
 import "@mantine/core/styles.css";
 import { AiOutlineLogin } from "react-icons/ai"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import validator from 'validator';
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllUser, login } from "../../State/Auth/Action";
+import { useDispatch} from "react-redux";
+import { login } from "../../State/Auth/Action";
 
 const LoginForm = ({close,menuClose}) => {
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route,Routes } from "react-router-dom";
 import { HomePage } from "../customer/pages";
-import { Cart, Checkout, Footer, Navbar, Order, OrderDetails, PaymentSuccess, PaymentUpdatePage, Product, ProductDetails } from "../customer/components";
+import { BottomNavigations, Cart, Checkout, Footer, Navbar, Order, OrderDetails, PaymentSuccess, PaymentUpdatePage, Product, ProductDetails, RecentlyViewed, Wishlist } from "../customer/components";
 
 const CustomerRoutes = () => {
     return (
@@ -22,7 +22,13 @@ const CustomerRoutes = () => {
                 <Route path="/account/order/:orderId" element={<OrderDetails/>} />
                 <Route path="/payment/:orderId" element={<PaymentSuccess/>} />
                 <Route path="/payment/:orderId/:paymentId" element={<PaymentUpdatePage/>} />
+                <Route path="/product/recentlyViewed" element={<RecentlyViewed/>} />
+                <Route path="/product/wishlist" element={<Wishlist/>} />
             </Routes>
+
+            <div>
+                <BottomNavigations/>
+            </div>
 
             <div>
                 <Footer />

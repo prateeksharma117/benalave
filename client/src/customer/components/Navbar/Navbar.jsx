@@ -157,6 +157,13 @@ const navigation = {
   ],
 };
 
+const messages = [
+  "Buy One, Get One Free on All Orders Over $300",
+  "New Arrivals - Shop Now!",
+  "Limited Time Offer - Don't Miss Out!",
+  // Add more messages here
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -164,8 +171,10 @@ function classNames(...classes) {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openAuthModal, setOpenAuthModal] = useState(false);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate();
-  const { auth } = useSelector((store) => store);
+  const auth = useSelector((store) => store?.auth);
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt");
 
@@ -204,6 +213,18 @@ const Navbar = () => {
     navigate("/account/order");
     handleMenuClose();
   };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (jwt) {
@@ -364,6 +385,8 @@ const Navbar = () => {
                       <p>{`${auth.jwt?.firstName} ${auth.jwt?.lastName}`}</p>
                       <p onClick={handleCartClick}>My Cart</p>
                       <p onClick={handleMyOrder}>My Order</p>
+                      <p onClick={()=>navigate("/product/recentlyViewed")}>Recent</p>
+                      <p onClick={()=>navigate("/product/wishlist")}>Wishlist</p>
                       <p onClick={handleLogout}>Logout</p>
                       {auth?.jwt?.role === "ADMIN" ? (
                         <p onClick={() => navigate("/admin")}>Admin Panel</p>
@@ -384,8 +407,8 @@ const Navbar = () => {
       </Transition.Root>
 
       <header className="relative bg-[#031020]">
-        <p className="flex h-10 items-center justify-center bg-[#2b65b6] px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Buy One, Get One Free on All Orders Over $300
+        <p className="flex h-10 items-center justify-center bg-[#2b65b6] duration-300 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+          {messages[currentMessageIndex]}
         </p>
 
         <nav
@@ -568,18 +591,28 @@ const Navbar = () => {
                 </div>
 
                 {/* Search */}
-                <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-white hover:text-[#2b65b6]">
+                <div className="flex ml-3 lg:ml-6 relative">
+                  <a
+                    className=" text-white hover:text-[#2b65b6]"
+                    onClick={toggleSearch}
+                  >
                     <span className="sr-only">Search</span>
-                    <MagnifyingGlassIcon
-                      className="h-6 w-6"
-                      aria-hidden="true"
-                    />
+                    <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
                   </a>
+                  {isSearchOpen && (
+                    <div className="absolute top-0 right-0 mt-12 w-60 bg-white border shadow-lg">
+                      {/* Search form */}
+                        <input
+                          type="text"
+                          placeholder="Search..."
+                          className="w-full p-2 focus:outline-none"
+                        />
+                    </div>
+                  )}
                 </div>
 
                 {/* Cart */}
-                <div className="ml-4 flow-root lg:ml-6 cursor-pointer">
+                <div className="ml-4 lg:ml-6 cursor-pointer hidden md:block">
                   <p className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       onClick={handleCartClick}
@@ -587,7 +620,7 @@ const Navbar = () => {
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-white group-hover:text-[#2b65b6]">
-                      0
+                      
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </p>

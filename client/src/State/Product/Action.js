@@ -15,6 +15,9 @@ import {
     RECENTLY_VIEWED_FAILURE,
     RECENTLY_VIEWED_REQUEST,
     RECENTLY_VIEWED_SUCCESS,
+    WISHLIST_USER_FAILURE,
+    WISHLIST_USER_REQUEST,
+    WISHLIST_USER_SUCCESS,
 } from "./ActionType.js";
 import { toast } from "react-toastify";
 
@@ -80,5 +83,16 @@ export const recentlyViewed = (reqData) => async (dispatch) => {
         dispatch({ type: RECENTLY_VIEWED_SUCCESS});
     } catch (e) {
         dispatch({ type: RECENTLY_VIEWED_FAILURE, payload: e.message });
+    }
+};
+
+export const wishlist = (reqData) => async (dispatch) => {
+    dispatch({ type: WISHLIST_USER_REQUEST });
+    try {
+        const {data}=await api.post(`/api/users/wishlist`,reqData);
+        console.log(data);
+        dispatch({ type: WISHLIST_USER_SUCCESS});
+    } catch (e) {
+        dispatch({ type: WISHLIST_USER_FAILURE, payload: e.message });
     }
 };

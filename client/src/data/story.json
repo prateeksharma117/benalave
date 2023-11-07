@@ -1,69 +1,83 @@
 {
     "story":[
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/8885/8885864.png",
+            "image":"https://www.snitch.co.in/cdn/shop/files/4MSS1900-02-M10651.jpg?v=1686640743&width=1800",
             "text":"Everyday Casual",
-            "category":"everydayCasual"
+            "category":"everydayCasual",
+            "sale":"48"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/8153/8153435.png",
+            "image":"https://www.snitch.co.in/cdn/shop/files/Dimmy_Augusto5457.jpg?v=1689185127&width=1800",
             "text":"Formal Wear",
-            "category":"manBusinessCasual"
+            "category":"manBusinessCasual",
+            "sale":"20"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/4940/4940863.png",
+            "image":"https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-snug-fit-high-rise-active-tights-in-orange-186868.jpg",
             "text":"Sports Wear",
-            "category":"sportsWear"
+            "category":"sportsWear",
+            "sale":"10"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/1999/1999625.png",
+            "image":"https://www.snitch.co.in/cdn/shop/files/4MSS2377-02-M39.webp?v=1699010635&width=1800",
             "text":"Man Wear",
-            "category":"manWear"
+            "category":"manWear",
+            "sale":"16"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/4140/4140047.png",
+            "image":"https://image.clovia.com/media/clovia-images/images/400x600/clovia-picture-zodiac-print-top-shorts-set-in-lilac-100-cotton-1-799691.jpg",
             "text":"Women Wear",
-            "category":"womenWear"
+            "category":"womenWear",
+            "sale":"23"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/3750/3750788.png",
+            "image":"https://img.faballey.com/images/Product/DRS04632Z/d5.jpg",
             "text":"Party Wear",
-            "category":"partyWear"
+            "category":"partyWear",
+            "sale":"80"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/5031/5031283.png",
+            "image":"https://www.snitch.co.in/cdn/shop/files/4MSD3630-01-3256.webp?v=1698511447&width=1800",
             "text":"Denim",
-            "category":"denim"
+            "category":"denim",
+            "sale":"18"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/11460/11460907.png",
+            "image":"https://www.snitch.co.in/cdn/shop/files/4MSS2481-01-M49.jpg?v=1697627692&width=1800",
             "text":"Outer Wear",
-            "category":"outerWear"
+            "category":"outerWear",
+            "sale":"78"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/10940/10940716.png",
+            "image":"https://assets.ajio.com/medias/sys_master/root/20230928/YDPl/6515744eafa4cf41f51522d7/-473Wx593H-469518636-navy-MODEL.jpg",
             "text":"Swim Wear",
-            "category":"swimWear"
+            "category":"swimWear",
+            "sale":"32"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/4161/4161931.png",
+            "image":"https://img.faballey.com/images/Product/JAC00534Z/d3.jpg",
             "text":"Seasonal",
-            "category":"sesonal"
+            "category":"seasonal",
+            "sale":"67"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/8611/8611237.png",
-            "text":"Eco-Friendly",
-            "category":"ecoFriendly"
+            "image":"https://www.snitch.co.in/cdn/shop/products/Matteus1873.jpg?v=1663078812&width=1800",
+            "text":"Occasional",
+            "category":"occasional",
+            "sale":"12"
+            
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/12332/12332656.png",
+            "image":"https://images.bewakoof.com/t1080/men-s-white-blue-color-block-sneakers-604961-1690372467-1.JPG",
             "text":"Foot Wear",
-            "category":"shoes"
+            "category":"shoes",
+            "sale":"54"
         },
         {
-            "image":"https://cdn-icons-png.flaticon.com/128/8491/8491582.png",
+            "image":"https://assets.ajio.com/medias/sys_master/root/20230714/0ezb/64b17302a9b42d15c95500c8/-473Wx593H-410381154-9hm-MODEL.jpg",
             "text":"Accessories",
-            "category":"accessories"
+            "category":"accessories",
+            "sale":"56"
         }
     ]
 }

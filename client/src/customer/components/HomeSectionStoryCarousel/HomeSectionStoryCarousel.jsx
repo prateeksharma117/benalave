@@ -4,42 +4,18 @@ import { HomeSectionStory } from "../../components"
 
 const HomeSectionStoryCarousel = ({ homeStory }) => {
 
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 9,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 9,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 600},
-      items: 5,
-    },
-    mobile: {
-      breakpoint: { max: 600, min: 350},
-      items: 3,
-    },
-    small: {
-      breakpoint: { max: 350, min: 0},
-      items: 2,
-    },
-  };
-
   return (
     <>
-      <div className="paddings">
-      <h1 className="primaryText mb-4">Category</h1>
-        <Carousel
-          responsive={responsive}
-          removeArrowOnDeviceType={["tablet", "mobile","small"]}
-        >
+      <div className="paddings flex flex-col justify-start">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className=" font-medium text-lg md:text-2xl">✨Decide what you want✨</h1>
+          <h1 className=" font-thin">Category</h1>
+        </div>
+        <div className="md:flex md:flex-wrap md:justify-center ">
           {
-            homeStory.story.map((item,i)=><HomeSectionStory key={i} story={item}/>)
+            homeStory.story.map((item, i) => <HomeSectionStory key={i} story={item} />)
           }
-        </Carousel>
+        </div>
       </div>
     </>
   )

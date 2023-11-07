@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import {
     Navbar,
-    MobileNav,
     Typography,
-    Button,
-    IconButton,
-    Card,
+    Collapse,
 } from "@material-tailwind/react";
 import benaleve from "../../assets/logo.png"
 import { useNavigate } from "react-router-dom";
@@ -146,9 +143,9 @@ const AdminNavbar = () => {
                         </div>
                     </div>
                 </div>
-                <MobileNav open={openNav}>
+                <Collapse open={openNav}>
                     {navList}
-                </MobileNav>
+                </Collapse>
             </Navbar>
         </div>
     )

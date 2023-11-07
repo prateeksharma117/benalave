@@ -78,8 +78,6 @@ const ProductDetails = () => {
       productId: params.productId,
     };
 
-    console.log(recentProductData);
-
     dispatch(recentlyViewed(recentProductData))
   }, [params.productId]);
 

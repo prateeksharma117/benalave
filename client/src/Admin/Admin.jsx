@@ -13,7 +13,7 @@ const Admin = () => {
 
     useEffect(() => {
         dispatch(getUser(jwt))
-    }, [jwt])
+    }, [])
 
 
     return (

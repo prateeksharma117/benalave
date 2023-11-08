@@ -40,7 +40,7 @@ const ProductCard = ({ product }) => {
                     src={product?.imageUrl[1]?.image}
                     alt=""
                 />
-                <div className=" absolute top-2 right-3 hover:scale-90">
+                <div className=" absolute top-2 right-3">
                     <AiFillHeart
                         onClick={() => onHeartClick()}
                         size={30}

@@ -42,7 +42,7 @@ const onHeartClick=()=>{
                     src={product?.imageUrl[1]?.image}
                     alt=""
                 />
-                <div className=" absolute top-2 right-3 hover:scale-90">
+                <div className=" absolute top-2 right-3">
                     <AiFillHeart onClick={()=>onHeartClick()}  size={30} color={auth?.jwt?.wishlist?.some(item => item?._id === product?._id) ? "#da444d" : "#c6c4c5"}/>
                 </div>
             </div>

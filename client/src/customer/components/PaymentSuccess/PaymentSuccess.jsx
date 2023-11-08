@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams,useHistory } from "react-router-dom";
 import {
     Alert,
     AlertTitle,
@@ -21,6 +21,7 @@ const PaymentSuccess = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const dispatch = useDispatch();
     const navigate = useNavigate()
+    const history = useHistory();
     const { orderId } = useParams();
     const { order } = useSelector((store) => store);
 
@@ -31,14 +32,11 @@ const PaymentSuccess = () => {
     };
 
     useEffect(() => {
-        if (typeof window !== 'undefined' && window.history) {
-            window.history.replaceState(null, document.title, window.location.href);
-        }
-
+        history.replace("/")
         const urlParams = new URLSearchParams(window.location.search);
         setPaymentId(urlParams.get("razorpay_payment_id"));
         setPaymentId(urlParams.get("razorpay_payment_link_status"));
-    }, [setPaymentId,]);
+    }, [setPaymentId]);
 
     useEffect(() => {
         dispatch(getOrderById(orderId));

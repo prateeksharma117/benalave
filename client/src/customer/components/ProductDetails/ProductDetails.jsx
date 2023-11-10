@@ -284,7 +284,7 @@ const ProductDetails = () => {
 
                 <div className=" mt-5">
                   <Button
-                    onClick={handleAddToCart}
+                    onClick={()=>handleAddToCart()}
                     variant="outlined"
                     sx={{
                       width: "100%",

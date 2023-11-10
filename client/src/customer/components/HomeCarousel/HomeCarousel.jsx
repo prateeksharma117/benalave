@@ -33,29 +33,22 @@ const HomeCarousel = () => {
                 >
                     <div>
                         <img
-                            className="object-cover w-full h-[25rem] md:h-[35rem]"
-                            src="https://dolcegabbana-cdn.thron.com/delivery/public/image/dolcegabbana/8eafd81c-9473-4d7c-ba9f-1a68bc44e615/dg7eqa/std/0x0/a1_2"
+                            className="object-cover w-full h-full md:h-screen"
+                            src="https://nolabels.in/cdn/shop/files/Website_Banner_14.jpg?v=1699277942&width=1920"
                             alt=""
                         />
                     </div>
                     <div>
                         <img
-                            className="object-cover w-full h-[25rem] md:h-[35rem]"
-                            src="https://dolcegabbana-cdn.thron.com/delivery/public/image/dolcegabbana/e5be004a-88dc-4b0e-89df-429affb6bb73/xkxkfc/std/0x0/a1_3"
+                            className="object-cover w-full h-full md:h-screen"
+                            src="https://nolabels.in/cdn/shop/files/Website_Banner_13.jpg?v=1698751509&width=1920"
                             alt=""
                         />
                     </div>
                     <div>
                         <img
-                            className="object-cover w-full h-[25rem] md:h-[35rem]"
-                            src="https://dolcegabbana-cdn.thron.com/delivery/public/image/dolcegabbana/488920cc-5db2-480e-bb3f-fb150f814da4/pqiamn/std/0x0/a1_4"
-                            alt=""
-                        />
-                    </div>
-                    <div>
-                        <img
-                            className="object-cover w-full h-[25rem] md:h-[35rem]"
-                            src="https://dolcegabbana-cdn.thron.com/delivery/public/image/dolcegabbana/e40fba7d-e7d5-4ede-82cc-9dc0196a0cc5/azcroc/std/0x0/a1_5"
+                            className="object-cover w-full h-full md:h-screen"
+                            src="https://nolabels.in/cdn/shop/files/Untitled-1-01_058b47e0-b956-474a-8dcc-fa6f0462bd39.jpg?v=1696316991&width=5760"
                             alt=""
                         />
                     </div>

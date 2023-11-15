@@ -33,21 +33,21 @@ const HomeCarousel = () => {
                 >
                     <div>
                         <img
-                            className="object-cover w-full h-full md:h-screen"
+                            className="object-cover w-full h-full"
                             src="https://nolabels.in/cdn/shop/files/Website_Banner_14.jpg?v=1699277942&width=1920"
                             alt=""
                         />
                     </div>
                     <div>
                         <img
-                            className="object-cover w-full h-full md:h-screen"
+                            className="object-cover w-full h-full"
                             src="https://nolabels.in/cdn/shop/files/Website_Banner_13.jpg?v=1698751509&width=1920"
                             alt=""
                         />
                     </div>
                     <div>
                         <img
-                            className="object-cover w-full h-full md:h-screen"
+                            className="object-cover w-full h-full"
                             src="https://nolabels.in/cdn/shop/files/Untitled-1-01_058b47e0-b956-474a-8dcc-fa6f0462bd39.jpg?v=1696316991&width=5760"
                             alt=""
                         />

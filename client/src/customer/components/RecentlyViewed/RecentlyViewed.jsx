@@ -30,7 +30,7 @@ const RecentlyViewed = () => {
                         <div className="flex justify-center flex-wrap space-y-5">
                             {auth?.jwt?.recentProduct?.length < 1 ? (
                                 <div className="flex flex-col px-5 items-center justify-center h-screen">
-                                <h2 className="text-2xl font-semibold mb-4">No Recently Viewed Product</h2>
+                                <h2 className="text-2xl font-semibold mb-4 text-center">No Recently Viewed Product</h2>
                                 <p className="text-gray-600 text-center">Sorry, we couldn&apos;t find any Recently Viewed Product for you at the moment. Please check back later</p>
                               </div>
                             ) : (

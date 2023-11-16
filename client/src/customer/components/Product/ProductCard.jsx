@@ -19,12 +19,18 @@ const ProductCard = ({ product }) => {
     }, []);
 
     const onHeartClick = () => {
+        const isProductInWishlist = auth?.jwt?.wishlist?.some((item) => item?._id === product?._id);
         const ProductData = {
             userId: auth?.jwt?._id,
             productId: product?._id,
         };
 
         dispatch(wishlist(ProductData));
+        if (isProductInWishlist) {
+            toast.error("Product removed from wishlist");
+        } else {
+            toast.success("Product added to wishlist");
+        }
     };
 
     return (

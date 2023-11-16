@@ -51,7 +51,6 @@ const ProductDetails = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
 
     const [minPrice, maxPrice] =
       priceValue === null ? [0, 10000] : priceValue.split("-").map(Number);

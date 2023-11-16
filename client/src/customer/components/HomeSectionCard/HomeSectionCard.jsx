@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../../../State/Auth/Action";
 import { wishlist } from "../../../State/Product/Action";
+import { toast } from "react-toastify";
 
 const HomeSectionCard = ({ product }) => {
 
@@ -25,6 +26,7 @@ const HomeSectionCard = ({ product }) => {
     };
 
     dispatch(wishlist(ProductData))
+
     if (isProductInWishlist) {
       toast.error("Product removed from wishlist");
     } else {

@@ -1,6 +1,20 @@
+import { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { getCarouselImage } from '../../../State/Carousel/Action';
+import { useDispatch, useSelector } from 'react-redux';
+
+
+
 const HomeCarousel = () => {
+
+    const dispatch = useDispatch();
+    const { carousel } = useSelector((store) => store);
+
+    useEffect(() => {
+        dispatch(getCarouselImage())
+    }, [])
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -31,27 +45,15 @@ const HomeCarousel = () => {
                     responsive={responsive}
                     removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
                 >
-                    <div>
-                        <img
-                            className="object-cover w-full h-full"
-                            src="https://nolabels.in/cdn/shop/files/Website_Banner_14.jpg?v=1699277942&width=1920"
-                            alt=""
-                        />
-                    </div>
-                    <div>
-                        <img
-                            className="object-cover w-full h-full"
-                            src="https://nolabels.in/cdn/shop/files/Website_Banner_13.jpg?v=1698751509&width=1920"
-                            alt=""
-                        />
-                    </div>
-                    <div>
-                        <img
-                            className="object-cover w-full h-full"
-                            src="https://nolabels.in/cdn/shop/files/Untitled-1-01_058b47e0-b956-474a-8dcc-fa6f0462bd39.jpg?v=1696316991&width=5760"
-                            alt=""
-                        />
-                    </div>
+                    {carousel?.Carousel?.map((imageUrl, index) => (
+                        <div key={index}>
+                            <img
+                                className="object-cover object-right w-full md:h-screen h-[15rem]"
+                                src={imageUrl?.image}
+                                alt=""
+                            />
+                        </div>
+                    ))}
                 </Carousel>
             </div>
         </>

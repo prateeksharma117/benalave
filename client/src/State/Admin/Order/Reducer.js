@@ -20,7 +20,7 @@ import {
 
 const initialState = {
     loading: false,
-    orders: [], 
+    orders: [],
     error: "",
 };
 
@@ -76,6 +76,6 @@ export const adminOrderReducer = (state = initialState, action) => {
             return { ...state, loading: false, error: action.payload };
 
         default:
-            return state; // Return the current state when the action type doesn't match
+            return state;
     }
 };

@@ -1,4 +1,5 @@
 import { getUserIdFromToken } from "../config/jwtProvider.js";
+import CarouselImageSchema from "../models/CarouselModel.js";
 import Product from "../models/ProductModel.js";
 import User from "../models/UserModel.js";
 import bcrypt from "bcryptjs";
@@ -92,7 +93,7 @@ export const recentProducts = async (reqData) => {
         } else {
 
             user.recentProduct.splice(recentProductIndex, 1);
-            user.recentProduct.unshift(product._id); 
+            user.recentProduct.unshift(product._id);
         }
 
         await user.save();
@@ -129,6 +130,32 @@ export const wishlist = async (reqData) => {
         await user.save();
 
         return { message: "Wishlist updated successfully" }
+    } catch (e) {
+        return { error: e.message }
+    }
+};
+
+export const carouselImage = async (reqData) => {
+    try {
+        await CarouselImageSchema.deleteMany({});
+        const newCarouselImages = reqData.map(async (item) => {
+            const { image } = item;
+            const newCarouselImage = new CarouselImageSchema({
+                image,
+            });
+            return await newCarouselImage.save();
+        });
+    
+        const savedCarouselImages = await Promise.all(newCarouselImages)
+    } catch (e) {
+        return { error: e.message }
+    }
+};
+
+export const getCarouselImage = async () => {
+    try {
+        const carouselImages = await CarouselImageSchema.find();
+        return carouselImages
     } catch (e) {
         return { error: e.message }
     }

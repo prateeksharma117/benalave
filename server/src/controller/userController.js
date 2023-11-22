@@ -1,4 +1,4 @@
-import { getAllUsers, getUserByEmail, getUserProfileByToken, recentProducts ,wishlist} from "../services/UserService.js";
+import { carouselImage, getAllUsers, getCarouselImage, getUserByEmail, getUserProfileByToken, recentProducts ,wishlist} from "../services/UserService.js";
 
 
 export const getUserProfile=async(req,res)=>{
@@ -51,6 +51,25 @@ export const wishlists=async(req,res)=>{
     try {
         const product=await wishlist(reqData)
         return res.status(201).send({message:"Products Add successfully"})
+    } catch (e) {
+        return res.status(500).send({error: e.message})
+    }
+}  
+
+export const carouselImages=async(req,res)=>{
+    const reqData=req.body
+    try {
+        await carouselImage(reqData)
+        return res.status(201).send({message:"carousel Images Add successfully"})
+    } catch (e) {
+        return res.status(500).send({error: e.message})
+    }
+}  
+
+export const getCarouselImages=async(req,res)=>{
+    try {
+        const data= await getCarouselImage()
+        return res.status(200).send(data)
     } catch (e) {
         return res.status(500).send({error: e.message})
     }

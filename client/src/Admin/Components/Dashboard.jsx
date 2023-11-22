@@ -3,6 +3,7 @@ import { Achievements, DashboardOrder, DashboardProduct, Loader, MonthlyOverView
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from 'react';
 import { getOrder } from '../../State/Admin/Order/Action';
+import CarouselImage from './CarouselImage';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,9 @@ const Dashboard = () => {
                 </Grid>
                 <Grid item xs={12} md={12}>
                   <DashboardOrder />
+                </Grid>
+                <Grid item xs={12} md={12}>
+                  <CarouselImage />
                 </Grid>
               </Grid>
             </div>

@@ -9,6 +9,6 @@ userRouter.get("/",getAllUser)
 userRouter.post("/recentProduct",Authenticate,recentProduct)
 userRouter.post("/wishlist",Authenticate,wishlists)
 userRouter.post("/carouselImage",Authenticate,carouselImages)
-userRouter.get("/getCarouselImage",Authenticate,getCarouselImages)
+userRouter.get("/getCarouselImage",getCarouselImages)
 
 export default userRouter

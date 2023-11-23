@@ -14,7 +14,7 @@ const HomeSectionCarousel = ({ data, sectionName ,sectionHeading}) => {
                 <div className="md:flex md:flex-wrap md:justify-center ">
                     {
 
-                        data?.slice(0, 10).map((item, i) => <HomeSectionCard product={item} key={i} />)
+                        data?.slice(0,5).map((item, i) => <HomeSectionCard product={item} key={i} />)
                     }
                 </div>
             </div>

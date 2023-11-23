@@ -14,6 +14,8 @@ const Profile = ({ userInitials, fullName, close }) => {
 
     const handleLogout = () => {
         dispatch(logout())
+        navigate("/")
+        window.location.reload()
     }
 
     const handleMyOrder = () => {

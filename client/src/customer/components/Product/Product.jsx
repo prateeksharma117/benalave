@@ -10,6 +10,7 @@ import { CiFilter } from "react-icons/ci";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from '@mui/material/Pagination';
+import { Loader } from "../../components"
 
 import {
   ChevronDownIcon,
@@ -566,20 +567,28 @@ const Product = () => {
               </form>
 
               {
-                product.loading===true?
-                (
-                <div></div>
-                ):
-                (
-                <div className="lg:col-span-5 w-full">
-                  <div className=" flex flex-wrap justify-center bg-white py-5">
-                    {product.products &&
-                      product.products?.content?.map((Item, i) => (
-                        <ProductCard product={Item} key={i} />
-                      ))}
-                  </div>
-                </div>
-                )
+                product.loading === true ?
+                  (
+                    <div className="lg:col-span-5 w-full flex items-center justify-center">
+                      <div className=" flex justify-center w-full h-full"><Loader /></div>
+                    </div>
+                  ) :
+                  (
+                    product?.products?.content?.length < 1 ? (
+                      <div className="lg:col-span-5 w-full flex items-center justify-center">
+                      <div className=" flex justify-center items-center w-full h-full">Unfortunately, no item was found</div>
+                    </div>
+                    ) : (
+                    <div className="lg:col-span-5 w-full">
+                      <div className=" flex flex-wrap justify-center bg-white py-5">
+                        {product.products &&
+                          product.products?.content?.map((Item, i) => (
+                            <ProductCard product={Item} key={i} />
+                          ))}
+                      </div>
+                    </div>
+                    )
+                  )
               }
             </div>
           </section>

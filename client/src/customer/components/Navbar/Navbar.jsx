@@ -192,6 +192,8 @@ const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(logout());
+    navigate("/")
+    window.location.reload()
   };
 
   const handleCategoryClick = (category, section, item) => {
@@ -385,8 +387,8 @@ const Navbar = () => {
                       <p>{`${auth.jwt?.firstName} ${auth.jwt?.lastName}`}</p>
                       <p onClick={handleCartClick}>My Cart</p>
                       <p onClick={handleMyOrder}>My Order</p>
-                      <p onClick={()=>navigate("/product/recentlyViewed")}>Recent</p>
-                      <p onClick={()=>navigate("/product/wishlist")}>Wishlist</p>
+                      <p onClick={() => navigate("/product/recentlyViewed")}>Recent</p>
+                      <p onClick={() => navigate("/product/wishlist")}>Wishlist</p>
                       <p onClick={handleLogout}>Logout</p>
                       {auth?.jwt?.role === "ADMIN" ? (
                         <p onClick={() => navigate("/admin")}>Admin Panel</p>
@@ -602,11 +604,11 @@ const Navbar = () => {
                   {isSearchOpen && (
                     <div className="absolute top-0 right-0 mt-12 w-60 bg-white border shadow-lg">
                       {/* Search form */}
-                        <input
-                          type="text"
-                          placeholder="Search..."
-                          className="w-full p-2 focus:outline-none"
-                        />
+                      <input
+                        type="text"
+                        placeholder="Search..."
+                        className="w-full p-2 focus:outline-none"
+                      />
                     </div>
                   )}
                 </div>
@@ -620,7 +622,7 @@ const Navbar = () => {
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-white group-hover:text-[#2b65b6]">
-                      
+
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </p>

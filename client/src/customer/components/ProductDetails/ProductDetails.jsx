@@ -18,6 +18,13 @@ import { getUser } from "../../../State/Auth/Action";
 const ProductDetails = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [rating, setRating] = useState(Math.floor(Math.random() * 6));
+  const [reviewCount, setReviewCount] = useState(
+    numeral(Math.floor(Math.random() * 1000000)).format("(0 a)")
+  );
+  const [ratingCount, setRatingCount] = useState(
+    numeral(Math.floor(Math.random() * 1000000)).format("(0 a)")
+  );
   const params = useParams();
   const dispatch = useDispatch();
   const { product, auth } = useSelector((store) => store);
@@ -38,6 +45,10 @@ const ProductDetails = () => {
       toast.warning("Please select size");
       return;
     }
+    if (jwt===null) {
+      toast.error("Please login first");
+      return;
+    }
     const data = {
       productId: params.productId,
       size: selectedSize,
@@ -52,6 +63,9 @@ const ProductDetails = () => {
 
   useEffect(() => {
 
+    setRating(Math.floor(Math.random() * 6));
+    setReviewCount(numeral(Math.floor(Math.random() * 1000000)).format("(0 a)"));
+    setRatingCount(numeral(Math.floor(Math.random() * 1000000)).format("(0 a)"));
     const [minPrice, maxPrice] =
       priceValue === null ? [0, 10000] : priceValue.split("-").map(Number);
 
@@ -168,16 +182,12 @@ const ProductDetails = () => {
                 <div className="flex items-center space-x-3">
                   <Rating
                     name="read-only"
-                    value={Math.floor(Math.random() * 6)}
+                    value={rating}
                     readOnly
                   />
-                  <p className=" opacity-50 text-sm">{`Ratings ${numeral(
-                    Math.floor(Math.random() * 1000000)
-                  ).format("(0 a)")}`}</p>
+                  <p className=" opacity-50 text-sm">{`Ratings ${ratingCount}`}</p>
                   <p className=" ml-3 text-sm font-medium text-[#2b65b6] hover:text-[#4691fb]">
-                    {`Reviews ${numeral(
-                      Math.floor(Math.random() * 1000000)
-                    ).format("(0 a)")}`}
+                  {`Review ${reviewCount}`}
                   </p>
                 </div>
               </div>
@@ -348,7 +358,7 @@ const ProductDetails = () => {
 
         <section className="py-10 mx-3">
           <h1 className="primaryText flex text">
-            {auth?.jwt?.recentProduct?.length < 1 ? "" : "RECENTLY VIEWED"}
+            {auth?.jwt?.recentProduct===undefined || auth?.jwt?.recentProduct?.length < 1 ? "" : "Recently Viewed"}
           </h1>
           <div className="flex justify-center flex-wrap space-y-5">
             {auth?.jwt?.recentProduct?.length < 1 ? (

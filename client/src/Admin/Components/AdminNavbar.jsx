@@ -31,6 +31,7 @@ const AdminNavbar = () => {
     const handleLogout = () => {
         dispatch(logout())
         navigate("/")
+        window.location.reload()
     }
 
 
